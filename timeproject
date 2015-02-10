@@ -1,0 +1,37 @@
+var flipCoin = function(){ // Returns true or false
+  if(Math.random() > 0.5){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// setTimeout runs a given function after a certain time period.
+// clearTimeout(x) stops a timer before it fires.
+
+// clearInterval(x) stops a looping timer.
+// setInterval runs a given function after a certain time period in a loop.
+
+var text = "California";
+
+
+//setInterval(FUNCTION{}, TIMEinMILIS)
+var myIntervalTimer = setInterval(function(){ // Runs once every 10 milliseconds.
+  // text += "California";
+  // text = text+"a";
+
+  // if(text.length > 20){
+  //   text = "is home";
+  // }
+
+  if( flipCoin() ){ //if it is true
+    console.log('%c'+text, 'background: blue; font-size: 14px; color: white;');
+  } else {
+    console.log('%c'+text, 'background: yellow; font-size: 14px;');
+  }
+}, 10);
+
+
+setTimeout(function(){ // In 10 seconds we stop setInterval from running.
+  clearInterval(myIntervalTimer);
+}, 1000 * 30);
